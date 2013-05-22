@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using com.teletech.AUG.Core;
 
 namespace AccUrlGeneratorWS
 {
@@ -18,9 +19,10 @@ namespace AccUrlGeneratorWS
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public string GenerateUrl(string userName, string participantId, string blowPass)
         {
-            return "Hello World";
+            AcclaimUrlGenerator aug = new AcclaimUrlGenerator();
+            return aug.GenerateAcclaimURL(userName, participantId, blowPass);
         }
     }
 }
