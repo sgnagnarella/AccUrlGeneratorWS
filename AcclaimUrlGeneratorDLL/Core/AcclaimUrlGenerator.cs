@@ -158,7 +158,7 @@ namespace com.teletech.AUG.Core
             }
             catch (Exception ex)
             {
-                return ex.StackTrace;
+                return participantId+userName+ ex.StackTrace;
             }
            
         }
