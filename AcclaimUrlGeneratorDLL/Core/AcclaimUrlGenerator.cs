@@ -66,7 +66,7 @@ namespace com.teletech.AUG.Core
             string dateToString = estDateTime.ToString("yyyyMMddHHmmss");
 
             //to int
-            long dateInt = Convert.ToInt64(dateToString);
+            long dateInt = Convert.ToInt64(dateToString); 
 
             //* 7
             dateInt = dateInt * 7;
