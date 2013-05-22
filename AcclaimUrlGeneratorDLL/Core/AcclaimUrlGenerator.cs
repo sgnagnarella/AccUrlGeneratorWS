@@ -29,7 +29,7 @@ namespace com.teletech.AUG.Core
 
             string urlBegin = System.Configuration.ConfigurationManager.AppSettings.Get("AUG_UrlBegin");
 
-            string blowPass = System.Configuration.ConfigurationManager.AppSettings.Get("AUG_BlowPass");
+            string blowPass = "!fr#*sD23(#p$&@8";
             
             if (blowFishhPass != string.Empty)
             {

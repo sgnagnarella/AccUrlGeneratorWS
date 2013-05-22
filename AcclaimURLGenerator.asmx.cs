@@ -22,8 +22,8 @@ namespace AccUrlGeneratorWS
         public string GenerateUrl(string userName, string participantId, string blowPass)
         {
             AcclaimUrlGenerator aug = new AcclaimUrlGenerator();
-            return blowPass;
             return aug.GenerateAcclaimURL(userName, participantId, blowPass);
         }
+
     }
 }
