@@ -6,6 +6,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcclaimUrlGeneratorDLL", "AcclaimUrlGeneratorDLL\AcclaimUrlGeneratorDLL.csproj", "{92657AFD-7B6A-45C0-8B39-A8E8C1341B25}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDriver", "TestDriver\TestDriver.csproj", "{FA206D41-162C-46EA-9303-5779B4450C58}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EFAE0C9B-96AB-4895-B9C4-84F9BEC1FFF9} = {EFAE0C9B-96AB-4895-B9C4-84F9BEC1FFF9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

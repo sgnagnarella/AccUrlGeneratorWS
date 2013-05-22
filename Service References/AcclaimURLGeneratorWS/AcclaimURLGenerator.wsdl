@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GenerateUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participantId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="blowPass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateUrlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GenerateUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateUrl" />
+  </wsdl:message>
+  <wsdl:message name="GenerateUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateUrlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AcclaimURLGeneratorSoap">
+    <wsdl:operation name="GenerateUrl">
+      <wsdl:input message="tns:GenerateUrlSoapIn" />
+      <wsdl:output message="tns:GenerateUrlSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AcclaimURLGeneratorSoap" type="tns:AcclaimURLGeneratorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerateUrl">
+      <soap:operation soapAction="http://tempuri.org/GenerateUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AcclaimURLGeneratorSoap12" type="tns:AcclaimURLGeneratorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerateUrl">
+      <soap12:operation soapAction="http://tempuri.org/GenerateUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AcclaimURLGenerator">
+    <wsdl:port name="AcclaimURLGeneratorSoap" binding="tns:AcclaimURLGeneratorSoap">
+      <soap:address location="http://localhost:40842/AcclaimURLGenerator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AcclaimURLGeneratorSoap12" binding="tns:AcclaimURLGeneratorSoap12">
+      <soap12:address location="http://localhost:40842/AcclaimURLGenerator.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
